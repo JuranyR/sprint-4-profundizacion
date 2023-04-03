@@ -1,0 +1,26 @@
+.order-accepted-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .follow-button{
+        display: flex;
+        bottom: 0;
+        position: fixed;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        margin: auto;
+        right: 16px;
+        left: 16px;
+        padding: 14px 0;
+        border: 0;
+        background: #FFE031;
+        border-radius: 10px;
+        justify-content: center;
+        margin-bottom: 40px;
+        text-decoration: none;
+        color: #414141;
+    }
+}

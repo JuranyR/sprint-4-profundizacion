@@ -1,0 +1,6 @@
+export const platesTypes = {
+    CREATE_PLATE: 'CREATE_PLATE',
+    GET_PLATES: 'GET_PLATES',
+    CURRENT_PLATE: 'CURRENT_PLATE',
+    DELETE_PLATE: 'DELETE_PLATE'
+}

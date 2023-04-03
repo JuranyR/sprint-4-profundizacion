@@ -1,0 +1,39 @@
+.address-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .address-input{
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 40px;
+        &.space-top{
+            margin-top: 30px;
+        }
+        .MuiInputBase-root {
+            font-size: 14px;
+        }
+        .MuiInput-input{
+            height: 0.5em;
+        }
+        .MuiInputLabel-formControl{
+            top: -20px;
+        }
+        .MuiInputBase-colorPrimary{
+            margin-top: 2px;
+        }
+        img{
+            margin-right: 5px;
+        }
+        button{
+            background: #FFE031;
+            border-radius: 5px;
+            border: none;
+            padding: 5px 10px;
+            img{
+                width: 16px;
+            }
+        }
+    }
+}

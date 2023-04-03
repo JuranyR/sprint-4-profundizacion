@@ -1,0 +1,103 @@
+.plate-page{
+    overflow-y: scroll;
+    height: calc(100vh - 110px);
+    >figure{
+        margin: 0;
+        img{
+            width: 100%;
+        }
+    }
+    .content{
+        margin: 0 16px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.3px;
+        color: #414141;
+        .title{
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 23px;
+            display: flex;
+            justify-content: space-between;
+            figure{
+                display: flex;
+                margin: 0;
+                align-items: center;
+                span{
+                    font-weight: 300;
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
+            p{
+                margin: 16px 0 10px 0;
+            }
+        }
+        .description{
+            margin: 0;
+        }
+        .ingredient-title{
+            color: #A7A7A7;
+            font-weight: 400;
+            margin: 16px 0 10px 0;
+            font-size: 16px;
+        }
+        .MuiTypography-root{
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: -0.3px;
+            color: #414141;
+        }
+        .ingredients{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .selected{
+                color: #FFE031;
+            }
+        }
+        .buttons{
+            display: flex;
+            bottom: 0;
+            position: fixed;
+            margin: auto;
+            right: 16px;
+            left: 16px;
+            margin-bottom: 30px;
+            height: 44px;
+            .addAmount{
+                background: #F2F2F2;
+                border-radius: 10px;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 23px;
+                letter-spacing: -0.3px;
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                min-width: 35%;
+                justify-content: space-between;
+                button{
+                    border: 0;
+                    display: flex;
+                    padding: 10px;
+                }
+            }
+            .add{
+                display: flex;
+                justify-content: space-between;
+                background: #FFE031;
+                border-radius: 10px;
+                padding: 14px 16px;
+                border: 0;
+                position: fixed;
+                right: 16px;
+                width: 50%;
+                color: #414141;
+                font-size: 14px;
+            }
+        }
+    }
+}

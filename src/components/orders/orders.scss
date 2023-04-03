@@ -1,0 +1,71 @@
+.orders-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .title{
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: -0.3px;
+        color: #414141;
+    }
+    .rest{
+        display: flex;
+        margin: 24px 0px;
+        flex-wrap: wrap;
+        gap: 30px;
+        a{
+            text-decoration: none;
+            width: 100%;
+            .card-rest{
+                display: flex;
+                gap: 14px;
+                width: 100%;
+                figure{
+                    margin: 0;
+                    img{
+                        border-radius: 10px;
+                    }
+                }
+                p{
+                    margin: 4px 0;
+                }
+                .information{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 16px;
+                    letter-spacing: -0.3px;
+                    width: 50%;
+                    .name{
+                        color: #414141;
+                    }
+                    .price{
+                        color: #A7A7A7;
+                    }
+                }
+                .status{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: flex-end;
+                    width: 50%;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 12px;
+                    letter-spacing: -0.3px;
+                    .canceled{
+                        color: #DF5252;
+                    }
+                    .delivered{
+                        color: #77DF52;
+                    }
+                    img{
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+    }
+}

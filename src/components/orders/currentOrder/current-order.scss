@@ -1,0 +1,101 @@
+.current-order-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .timer{
+        background: linear-gradient(95.95deg, rgb(255, 224, 49, 0.1) 7.37%, rgb(255, 238, 141,0.1) 82.55%);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        >img{
+            margin: 10px 0 16px;
+        }
+        .process{
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            figure{
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 6px 0;
+                &.current{
+                    color: #FFE031;
+                }
+                p{
+                    margin: 0;
+                }
+                .circle{
+                    background: #FFE031;
+                    border-radius: 50%;
+                    margin-bottom: 3px;
+                    width: 14px;
+                    height: 14px;
+                    &.complete{
+                        background: #FFE031  url("../../../images/done.png") no-repeat  center;
+                    }
+                    &.default{
+                        background: #C4C4C4;
+                    }
+                }
+            }
+        }
+    }
+    .all-order{
+        margin-top: 54px;
+        figure{
+            margin: 0;
+            img{
+                border-radius: 10px;
+            }
+        }
+        .card-order{
+            display: flex;
+            align-items: center;
+            .information{
+                display: flex;
+                width: 100%;
+                .quantity{
+                    color: #A7A7A7;
+                    font-weight: 300;
+                    font-size: 12px;
+                    letter-spacing: 3px;
+                    line-height: 12px;
+                    margin: 0 16px;
+                }
+                .order{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    align-items: center;
+                    .price{
+                        color: #A7A7A7;
+                    }
+                }
+            }
+        }
+    }
+    .bottom-info{
+        margin-top: 150px;
+        .order-button{
+            display: flex;
+            font-size: 14px;
+            line-height: 16px;
+            margin: 32px 0 60px 0;
+            padding: 14px 0;
+            border: 0;
+            background: #FFE031;
+            width: 100%;
+            border-radius: 10px;
+            justify-content: center;
+            text-decoration: none;
+            color: #414141;
+        }
+    }
+}

@@ -1,0 +1,116 @@
+.home{
+    margin: 0 16px;
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow-y: auto;
+    scrollbar-width: none;  /* Firefox */
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+    .promo{
+        margin: 0 8px 16px 0;
+        img{
+            border-radius: 15px;
+            max-height: 120px;
+            max-width: 650px;
+        }
+    }
+    >.title{
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 16px;
+        color: #414141;
+    }
+    .category{
+        outline: none;
+        cursor: pointer;
+        background: #F2F2F2;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        justify-content: space-evenly;
+        width: 90%;
+        align-items: center;
+        min-height: 32px;
+        height: 100%;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        color: #6C6C6C;
+        padding: 0;
+        &.selected{
+            background: #FFE031;
+        }
+        img{
+            width: 15%;
+        }
+    }
+    .cards{
+        display: flex;
+        margin: 34px 0px;
+        flex-wrap: wrap;
+        gap: 30px;
+        .card-restaurant{
+            display: flex;
+            gap: 14px;
+            text-decoration: none;
+            figure{
+                margin: 0;
+                img{
+                    clip-path: polygon(0 0, 0 260px, 170px -50px, 100px 0);
+                    border-radius: 10px;
+                }
+            }
+            p{
+                margin: 4px 0;
+            }
+            .information{
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: -0.3px;
+                color:#414141;
+                >.title{
+                    font-weight: 600;
+                }
+                .time{
+                    font-weight: 400;
+                }
+                .money{
+                    color: #A7A7A7;
+                    font-weight: 400;
+                    font-size: 10px;
+                    line-height: 12px;
+                }
+            }
+
+        }
+    }
+    .viewCard{
+        background: #FFE031;
+        border-radius: 10px;
+        position: fixed;
+        bottom: 80px;
+        width: calc(100% - 32px);
+        border: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        height: 44px;
+        box-sizing: border-box;
+        margin: 0 16px;
+        padding: 0 16px;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #414141;
+        .cant{
+            background: #414141;
+            border-radius: 4px;
+            padding: 5px;
+            color: #FFFFFF;
+        }
+    }
+}

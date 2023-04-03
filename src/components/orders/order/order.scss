@@ -1,0 +1,35 @@
+.order-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .voucher-product{
+        display: flex;
+        justify-content: space-between;
+        color: #414141;
+        margin-bottom: 10px;
+        .cant{
+            font-size: 10px;
+            color: #A7A7A7;
+            margin-right:10px ;
+        }
+        .product{
+            font-size: 14px;
+        }
+    }
+    .voucher-info{
+        font-weight: 400;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        &.space-top{
+            margin-top: 32px;
+        }
+    }
+    .total{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,87 @@
+.footer{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    figure{
+        margin: 16px 30px;
+        .link-footer{
+            overflow: unset;
+            width: 100%;
+            min-width: 32px;
+            min-height: 32px;
+            display: inline-block;
+            height: 100%;
+            &.home{
+                background: url('../../../images/home.png') no-repeat center;
+                &.selected{
+                    background: url('../../../images/homeYellow.png') no-repeat center;
+                    &::after{
+                        width: 5px;
+                        height: 5px;
+                        content: '';
+                        display: block;
+                        background-color: #FFE031;
+                        position: relative;
+                        top: 100%;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &.search{
+                background: url('../../../images/Search.svg') no-repeat center;
+                &.selected{
+                    background: url('../../../images/searchYellow.svg') no-repeat center;
+                    &::after{
+                        width: 5px;
+                        height: 5px;
+                        content: '';
+                        display: block;
+                        background-color: #FFE031;
+                        position: relative;
+                        top: 100%;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &.order{
+                background: url('../../../images/order.png') no-repeat center;
+                &.selected{
+                    background: url('../../../images/orderYellow.png') no-repeat center;
+                    &::after{
+                        width: 5px;
+                        height: 5px;
+                        content: '';
+                        display: block;
+                        background-color: #FFE031;
+                        position: relative;
+                        top: 100%;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &.profile{
+                background: url('../../../images/profile.png') no-repeat center;
+                &.selected{
+                    background: url('../../../images/profileYellow.png') no-repeat center;
+                    &::after{
+                        width: 5px;
+                        height: 5px;
+                        content: '';
+                        display: block;
+                        background-color: #FFE031;
+                        position: relative;
+                        top: 100%;
+                        margin: 0 auto;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

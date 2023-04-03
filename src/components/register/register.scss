@@ -1,0 +1,57 @@
+.register-page{
+    margin: 20px 16px;
+    h1{
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28px;
+        color: #414141;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .input-form{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .text-field{
+                box-sizing:border-box;
+                outline: none;
+                border: 0.5px solid #A7A7A7;
+                height: 28px;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                width: 100%;
+                color: #A7A7A7;
+                &.border-red{
+                    border-bottom: 1px solid red;
+                }
+                &:not(.border-red){
+                    margin-bottom: 16px;
+                }
+            }
+        }
+        .save-data-user{
+            display: flex;
+            bottom: 0;
+            position: fixed;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            margin: auto;
+            right: 16px;
+            left: 16px;
+            padding: 14px 0;
+            border: 0;
+            background: #FFE031;
+            border-radius: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+    }
+    .text-red{
+        color: red;
+        margin-bottom: 16px;
+    }
+}

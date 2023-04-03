@@ -1,0 +1,29 @@
+@import './components/commons/header-back/header-back.scss';
+@import './components/commons/footer/footer.scss';
+@import './components/commons/orderInformation/order-information.scss';
+
+@import './components/login/loginPhone/login-phone.scss';
+@import './components/login/loginEmail/login.scss';
+@import './components/register/register.scss';
+@import './components/home/header/header.scss';
+@import './components/home/home.scss';
+@import './components/restaurant/restaurant.scss';
+@import './components/restaurant/plate/plate.scss';
+@import './components/search/search.scss';
+@import './components/orders/orders.scss';
+@import './components/orders/order/order.scss';
+@import './components/orders/newOrder/new-order.scss';
+@import './components/orders/currentOrder/current-order.scss';
+@import './components/orders/orderAcepted/order-accepted.scss';
+@import './components/address/address.scss';
+@import './components/profile/profile.scss';
+@import './components/profile/editProfile/edit-profile.scss';
+@import './components/payment/payment-method.scss';
+@import './components/payment/newCard/new-card.scss';
+
+
+body {
+  margin: 0;
+  font-family:'Roboto',
+}
+

@@ -1,0 +1,78 @@
+.new-card-page{
+    margin: 20px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.3px;
+    color: #414141;
+    .paymentForm_form{
+        display: flex;
+        flex-direction: column;
+        .inputCard{
+            display: flex;
+            align-items: baseline;
+            margin: 0;
+            background: #F2F2F2;
+            border-radius: 10px;
+            border: 0;
+            padding: 7px 0px 6px 10px;
+            margin: 10px 0;
+            width: 100%;
+            input{
+                border: none;
+                background: transparent;
+                margin: 0;
+                padding: 0px;
+                color: inherit;
+                border: 1px solid transparent;
+                border-radius: inherit;
+                width: 100%;
+                outline: none;
+            }
+            button{
+                overflow: hidden;
+                margin: 0 12px;
+                border: 1px solid transparent;
+                background-color: transparent;
+                border-radius: inherit;
+                opacity: 0.7;
+            }
+        }
+        input{
+            background: #F2F2F2;
+            border-radius: 10px;
+            border: 0;
+            padding: 10px 0px 10px 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+        .two-fields{
+            display: flex;
+            gap: 15px;
+            >div{
+                width: 50%;
+            }
+        }
+        .paymentForm_errors{
+            color: red;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+        .save{
+            display: flex;
+            bottom: 0;
+            position: fixed;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            margin: auto;
+            right: 16px;
+            left: 16px;
+            padding: 14px 0;
+            border: 0;
+            background: #FFE031;
+            border-radius: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+    }
+}

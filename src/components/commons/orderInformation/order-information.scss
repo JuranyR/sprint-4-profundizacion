@@ -1,0 +1,13 @@
+.order-information{
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    &.space-top{
+        margin-top: 22px;
+    }
+    .total{
+        font-size: 20px;
+        line-height: 17px;
+    }
+}
