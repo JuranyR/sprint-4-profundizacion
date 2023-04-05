@@ -30,10 +30,16 @@
                         border-radius: 10px;
                     }
                 }
+                .logo{
+                    display: flex;
+                    align-items: center;
+                    width: 25px;
+                }
                 p{
                     margin: 4px 0;
                 }
                 .information{
+                    background-color: #FFF;
                     font-weight: 400;
                     font-size: 14px;
                     line-height: 16px;
@@ -60,6 +66,9 @@
                     }
                     .delivered{
                         color: #77DF52;
+                    }
+                    .inProcess{
+                        color: #FFE031;
                     }
                     img{
                         padding: 0 10px;

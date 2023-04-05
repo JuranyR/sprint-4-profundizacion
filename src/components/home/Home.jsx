@@ -15,12 +15,14 @@ import iceCream from '../../images/ice-cream.png'
 import Rating from '@mui/material/Rating';
 import Footer from "../commons/footer/Footer";
 import { getRestaurantActionAsync, getFilterRestaurantActionAsync } from '../../redux/actions/restaurantActions'
+import {getTotalOrder} from '../../utils/general'
 
 const  Home = () => {
   const [category, serCategory]=useState('')
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { restaurants } = useSelector((store) => store.restaurants);
+  const { currentOrder } = useSelector((store) => store.orders);
 
   useEffect(()=>{
     dispatch(getRestaurantActionAsync())
@@ -35,6 +37,7 @@ const  Home = () => {
     dispatch(getFilterRestaurantActionAsync(item, 'category'));
   }
   
+
   return (
     <section className="home">
       <Header />
@@ -87,15 +90,17 @@ const  Home = () => {
           ))
         }
       </div>
-      <NavLink className="viewCard"
-          to="/newOrder"
-      >
-        <span className="cant">4</span>
-        <span>View card</span>
-        <span>64.00$</span>
-      </NavLink>
+      {currentOrder && Object.keys(currentOrder).length !== 0 && (
+        <NavLink className="viewCard"
+            to="/newOrder"
+        >
+          <span className="cant">{currentOrder.product.length}</span>
+          <span>View card</span>
+          <span>$ {getTotalOrder(currentOrder.product)}</span>
+        </NavLink>
+      )}
       <Footer/>
-      <button onClick={logOut}>Logout</button>
+      {/* <button onClick={logOut}>Logout</button> */}
     </section>
   );
 }

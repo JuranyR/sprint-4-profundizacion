@@ -4,6 +4,10 @@
     line-height: 16px;
     letter-spacing: -0.3px;
     color: #414141;
+    figure{
+        display: flex;
+        justify-content: center;
+    }
     .follow-button{
         display: flex;
         bottom: 0;

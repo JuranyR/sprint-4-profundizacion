@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signOut,  signInWithPopup, } from "firebase/auth"
 import { auth } from "../../firebase/FirebaseConfig"
 import { loginTypes } from "../types/loginTypes"
-import { getFilterItemsActionAsync, createItemActionAsync } from '../../services/crudColection';
+import { getFilterItemsActionAsync, createItemActionAsync, updateItemActionAsync } from '../../services/crudColection';
 
 export const loginUserAsync = ( {email, password} ) =>{
     return async (dispatch) =>{
@@ -60,7 +60,7 @@ export const loginUser = (user, error) =>{
     }
 }
 
-export const userCreateAsync = ( {email, password, name, birthday, photo, update} ) =>{
+export const userCreateAsync = ( {email, password, name, birthday, photo, update, cellphone} ) =>{
     return async (dispatch) =>{
         dispatch(toggleLoading())
         try {
@@ -74,8 +74,10 @@ export const userCreateAsync = ( {email, password, name, birthday, photo, update
                 name,
                 email,
                 photo,
+                cellphone,
                 uid: auth.currentUser.uid,
-                location: "",
+                location: [],
+                cards:[]
             };
             await createItemActionAsync(user, 'users')
             const error = { status: false, message: ''}
@@ -161,5 +163,83 @@ export const verifyCodeAsync = (code) => {
             );
             dispatch(toggleLoading())
         });
+    };
+};
+
+export const updateProfileAsync = (userInfo) => {
+    return async (dispatch) => {
+        try {
+            await updateProfile(auth.currentUser, {
+                displayName: userInfo.name
+            });
+
+            const userData = {
+                birthday: userInfo.birthday,
+                name: userInfo.name,
+                email: userInfo.email,
+                photo: userInfo.photo,
+                cellphone: userInfo.cellphone,
+                
+            };
+            
+            const userCollection = await updateItemActionAsync("users",userData,userInfo.id);
+
+            dispatch(
+                updateProfileSync({
+                    user: {...userCollection},
+                    error: {
+                        status: false,
+                        message: ""
+                    }
+                })
+            );
+        } catch (err) {
+            console.log(err);
+            dispatch(
+                loginUser({
+                    user: {},
+                    error: { status: true, message: 'Error al actualizar usuario'},
+                })
+            );
+        }
+    }
+}
+
+export const updateDataUserActionAsync = (user) => {
+    return async (dispatch) => {
+      try {
+        const id= user.id;
+        delete user.id
+        const userData= await updateItemActionAsync("users",user,id);
+        dispatch(
+            updateProfileSync({
+                user: {...userData},
+                error: {
+                    status: false,
+                    message: ""
+                }
+            })
+        );
+        return userData
+      } catch (error) {
+        dispatch(
+            loginUser({
+                user: {},
+                error: { status: true, message: 'Error al actualizar usuario'},
+            })
+        );
+      }
+    };
+};
+
+const updateProfileSync = ({ user, error }) => {
+    return {
+        type: loginTypes.UPDATE_USER,
+        payload: {
+            user: { ...user },
+            error: {
+                ...error,
+            },
+        },
     };
 };

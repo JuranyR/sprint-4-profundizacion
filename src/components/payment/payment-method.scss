@@ -3,16 +3,17 @@
     font-size: 14px;
     line-height: 16px;
     letter-spacing: -0.3px;
-    color: #414141;
+    color: #6a3333;
     .card{
         background: #FFFFFF;
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
         padding: 2px;
-        border: 1px solid #fff;
+        border: 1px solid #8f8f8f;
         color: #8f8f8f;
         z-index: 100;
+        margin-bottom: 20px;
         &.selected{
             border: 1px solid #FFE031;
         }

@@ -58,6 +58,11 @@
         .card-order{
             display: flex;
             align-items: center;
+            figure{
+                img{
+                    width: 44px;
+                }
+            }
             .information{
                 display: flex;
                 width: 100%;

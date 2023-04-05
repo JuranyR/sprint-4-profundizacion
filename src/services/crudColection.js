@@ -1,5 +1,5 @@
 import { dataBase } from "../firebase/FirebaseConfig";
-import { getDocs, query, where, collection, addDoc, doc, getDoc  } from "firebase/firestore";
+import { getDocs,  collectionGroup, query, where, collection, addDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 
 export const getFilterItemsActionAsync = async (collectionName, filter) => {
     try {
@@ -59,4 +59,52 @@ export const getItemsActionAsync = async (collectionName) => {
     } catch (error) {
         console.log(error);
     }
+};
+
+export const getItemsSubCollectionActionAsync = async (subCollectionName) => {
+    try {
+        const querySnapshot = query(collectionGroup(dataBase, subCollectionName))
+        const itemDoc = await getDocs(querySnapshot);
+        const items = [];
+        itemDoc.forEach((doc) => {
+            const documentReference = doc.ref
+            items.push({
+                idParent:documentReference?.parent?.parent?.id?documentReference.parent.parent.id:doc.id,
+                id: doc.id,
+                ...doc.data(),
+            });
+        });
+        return items
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const getItemsFilterSubCollectionActionAsync = async (subCollectionName, filter) => {
+    try {
+        const querySnapshot = query(collectionGroup(dataBase, subCollectionName), where(...filter))
+        const itemDoc = await getDocs(querySnapshot);
+        const items = [];
+        itemDoc.forEach((doc) => {
+            items.push({
+                id: doc.id,
+                ...doc.data(),
+            });
+        });
+        return items
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const updateItemActionAsync = async (collectionName,item, itemId) => {
+    try {
+        const docRef = doc(dataBase, collectionName, itemId);
+        const data = {...item};
+        await updateDoc(docRef, data);
+        return {id: itemId,...item}
+    } catch (error) {
+        console.log(error)
+    }
+
 };

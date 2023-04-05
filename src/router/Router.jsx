@@ -49,12 +49,12 @@ const Router = () => {
                     <Route path="address" element={<Address />} />
                     <Route path="search" element={<Search />} />
                     <Route path="newOrder" element={<NewOrder />} />
-                    <Route path="currentOrder" element={<CurrentOrder />} />
-                    <Route path="orderAccepted" element={<OrderAccepted />} />
+                    <Route path="currentOrder/:orderId" element={<CurrentOrder />} />
+                    <Route path="orderAccepted/:orderId" element={<OrderAccepted />} />
                     <Route path="orders" element={<Orders />} />
-                    <Route path="orders/:orderId" element={<Order />} />
+                    <Route path="order/:restaurantId/:orderId" element={<Order />} />
                     <Route path="profile" element={<Profile />} />
-                    <Route path="editProfile" element={<EditProfile />} />
+                    <Route path="editProfile/:userId" element={<EditProfile />} />
                     <Route path="paymentMethod" element={<PaymentMethod />} />
                     <Route path="addNewCard" element={<NewCard />} />
                 </Route>

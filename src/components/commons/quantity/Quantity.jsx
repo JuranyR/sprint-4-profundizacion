@@ -1,21 +1,28 @@
-import React, {useState}  from "react";
+import React, {useEffect, useState}  from "react";
 import less from '../../../images/less.png'
 import plus from '../../../images/plus.png'
 
-const Quantity = () => {
-    const [amount, setAmount] = useState(1);
-
-    //Function to decrease the amount of pizza
+const Quantity = ({onChangeAmount, defaultValue, item}) => {
+    const [amount, setAmount] = useState(defaultValue?defaultValue:1);
+/*
+    useEffect(()=>{
+        
+    },[amount])
+*/
     const handleDecrease = () => {
         if (amount > 1) {
-        setAmount(amount - 1);
+            const resAmount=amount - 1
+            setAmount(resAmount);
+            onChangeAmount(resAmount,item?item:{})
         }
     };
 
-    //Function to increase the amount of pizza
     const handleIncrease = () => {
-        setAmount(amount + 1);
+        const addAmount=amount+ 1
+        setAmount(addAmount);
+        onChangeAmount(addAmount,item?item:{})
     };
+
     return (
         <>
             <button className="car_add_reduce" onClick={handleDecrease}>

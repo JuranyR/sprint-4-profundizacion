@@ -67,6 +67,11 @@
         .card-order{
             display: flex;
             align-items: center;
+            >figure{
+                img{
+                    width: 44px;
+                }
+            }
             .information{
                 display: flex;
                 width: 100%;
@@ -114,6 +119,7 @@
     .bottom-info{
         margin-top: 80px;
         .order-button{
+            cursor: pointer;
             display: flex;
             font-size: 14px;
             line-height: 16px;

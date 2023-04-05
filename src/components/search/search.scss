@@ -52,6 +52,7 @@
         li{
             font-weight: 300;
             color: #A7A7A7;
+            cursor: pointer;
             img{
                 padding-right: 6px;
             }
@@ -66,10 +67,14 @@
             display: flex;
             gap: 14px;
             width: 300px;
+            text-decoration: none;
             figure{
                 margin: 0;
                 img{
                     border-radius: 10px;
+                    width: 44px;
+                    height: 44px;
+                    object-fit: cover;
                 }
             }
             p{

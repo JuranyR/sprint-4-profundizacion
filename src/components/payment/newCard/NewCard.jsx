@@ -2,8 +2,16 @@ import React from "react";
 import HeaderBack from '../../commons/header-back/HeaderBack';
 import { useForm } from "react-hook-form";
 import showInfo from '../../../images/showInfo.png'
+import { useSelector, useDispatch } from "react-redux";
+import {updateDataUserActionAsync} from '../../../redux/actions/loginActions'
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const NewCard = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { user } = useSelector((store) => store.login);
+
     const {register,handleSubmit,watch, formState: { errors }} = useForm({
         defaultValues: {
         TC: "",
@@ -49,10 +57,30 @@ const NewCard = () => {
     .replace(/^(\d{2})\/?(\d{0,2})/, (_, a, b) => a + (b ? `/${b}` : "")).trim();
 
     const onSubmitPaymentForm = async (formData) => {
-        const dataOrder = {
-            ...formData, // Agregar los datos del formulario
-        };
-        console.log(dataOrder)
+        let newUser= {...user};
+        const newCard={
+            ...formData,
+                selected:false
+        }
+        newUser.cards=[
+            ...newUser.cards,
+            {
+                ...newCard
+            }
+        ]
+        dispatch(updateDataUserActionAsync(newUser)).then(data=>{
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'tarjeta agregada exitosamente!',
+                confirmButtonText: 'ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate(-1)
+                }
+            })
+        })
+
     };
     return (
         <section className="new-card-page">

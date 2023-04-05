@@ -5,4 +5,5 @@ export const loginTypes = {
     GET_USER: 'GET_USER',
     TOGGLE_LOADING: 'TOGGLE_LOADING',
     TOGGLE_LOGIN: 'TOGGLE_LOGIN',
+    UPDATE_USER: 'UPDATE_USER'
 }

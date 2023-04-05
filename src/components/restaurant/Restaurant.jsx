@@ -10,7 +10,7 @@ import { getPlateActionAsync, getFilterPlateActionAsync } from '../../redux/acti
 
 const Restaurant = () => {
     const { restaurantId } = useParams();
-    const [category, serCategory]=useState('')
+    const [category, setCategory]=useState('')
     const dispatch = useDispatch();
 
     const { current } = useSelector((store) => store.restaurants);
@@ -22,7 +22,7 @@ const Restaurant = () => {
     },[])
 
     const filterCategory = (item) =>{
-        serCategory(item)
+        setCategory(item)
         dispatch(getFilterPlateActionAsync(item, 'category', restaurantId));
     }
 

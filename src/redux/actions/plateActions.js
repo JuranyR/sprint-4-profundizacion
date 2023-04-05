@@ -1,5 +1,5 @@
 import { platesTypes } from "../types/platesTypes";
-import { getItemsActionAsync, getItemsByIdActionAsync, getFilterItemsActionAsync } from '../../services/crudColection';
+import { getItemsActionAsync, getItemsByIdActionAsync, getFilterItemsActionAsync, getItemsSubCollectionActionAsync } from '../../services/crudColection';
 
 export const getPlateActionAsync = (idRestaurant) => {
     return async (dispatch) => {
@@ -10,6 +10,18 @@ export const getPlateActionAsync = (idRestaurant) => {
         dispatch(getPlateAction([]));
       }
     };
+};
+
+export const getFilterPlatesActionAsync = (wordSearch) => {
+  return async (dispatch) => {
+    try {
+      const plates = await getItemsSubCollectionActionAsync("plates");
+      const filterPLate= plates.filter(item=> item.name.toLowerCase().includes(wordSearch.toLowerCase()))
+      dispatch(getPlateAction(filterPLate));
+    } catch (error) {
+      dispatch(getPlateAction([]));
+    }
+  };
 };
 
 const getPlateAction = (plates) => {

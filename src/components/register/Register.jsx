@@ -63,6 +63,14 @@ const Register = () => {
         
         <label className='input-form' >
           <span>
+            cellphone
+          </span>
+          <input className={`text-field ${errors.cellphone ? 'border-red' : ''}`} type="text"  {...register('cellphone', { required: 'Celular requerido' })} />
+        </label>
+        {errors.cellphone ? <span className='text-red'>{errors.cellphone.message}</span> : <></>}
+        
+        <label className='input-form' >
+          <span>
             Email
           </span>
           <input disabled={location.state.email?true:false} className={`text-field ${errors.email ? 'border-red' : ''}`} type="text" {...register('email', { required: 'Email es requerido', validate:validateEmail })} />

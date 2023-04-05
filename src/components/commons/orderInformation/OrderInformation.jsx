@@ -1,20 +1,23 @@
 import React from "react";
+import {getTotalOrder, getPrice} from '../../../utils/general'
 
-const OrderInformation = () => {
+const OrderInformation = ({currentOrder}) => {
+    const total= getTotalOrder(currentOrder.product);
+    const costDelivery= getPrice(currentOrder.costDelivery)
     return (
         <>
             <div className="order-information">
                 <span className="product">Products</span>
-                <span>60.45$</span>
+                <span>{total} $</span>
             </div>
             <div className="order-information">
                 <span className="product">Delivery</span>
-                <span>4.5$</span>
+                <span>{costDelivery} $</span>
             </div>
             <hr />
             <div className="order-information space-top">
                 <span className="product">Total</span>
-                <span className="total">64.95$</span>
+                <span className="total">{costDelivery+Number(total)}$</span>
             </div>
         </>
     );

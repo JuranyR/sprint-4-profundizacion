@@ -3,11 +3,13 @@ const initialState = {
     user: {
         name: '',
         email: '',
-        location: '',
+        location: [],
         birthday: '',
         administrator: false,
         phoneNumer: '',
-        photo: ''
+        photo: '',
+        cellphone:'',
+        cards:[]
     },
     error: {
         status: undefined,
@@ -29,7 +31,8 @@ export const loginReducer = (state = initialState, action ) =>{
                     birthday: action.payload.user.birthday,
                     administrator: action.payload.user.administrator,
                     phoneNumer: action.payload.user.phoneNumer,
-                    photo: action.payload.user.photo
+                    photo: action.payload.user.photo,
+                    cellphone: action.payload.user.cellphone
                 },
                 error: {
                     status: action.payload.error.status,
@@ -41,7 +44,11 @@ export const loginReducer = (state = initialState, action ) =>{
                 ...state,
                 ...action.payload
             }
-
+        case loginTypes.UPDATE_USER:
+            return {
+                ...state,
+                ...action.payload,
+            };
         case loginTypes.LOGOUT_USER:
             return{
                 ...initialState

@@ -1,39 +1,52 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Footer from "../../commons/footer/Footer";
 import HeaderBack from '../../commons/header-back/HeaderBack';
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import {getOrderByIdActionAsync} from '../../../redux/actions/orderActions'
+import {getTotalOrder,getPrice} from '../../../utils/general'
 
 const  Order = () => {
+  const { orderId, restaurantId } = useParams();
+  const dispatch = useDispatch();
+  const { currentOrder } = useSelector((store) => store.orders);
+
+  useEffect(()=>{
+    dispatch(getOrderByIdActionAsync(restaurantId,orderId))
+  },[])
+
   return (
     <>
         <section className="order-page">
-            <HeaderBack text="26.11.2022" />
-            <div className="voucher-product">
-              <div>
-                <span className="cant">1x</span>
-                <span className="product">Meat Pizza(medium)</span>
+          {currentOrder &&   Object.keys(currentOrder).length !== 0 &&
+            <>
+              <HeaderBack text={currentOrder.creationDate} />
+              {
+                currentOrder.product.map(order=>(
+                  <div className="voucher-product" key={order.id}>
+                    <div>
+                      <span className="cant">{order.cant}x</span>
+                      <span className="product">{order.name}</span>
+                    </div>
+                    <span>{order.totalOrder}</span>
+                  </div>
+                ))
+              }
+              <div className="voucher-info  space-top">
+                <span className="product">Production cost</span>
+                <span>${getTotalOrder(currentOrder.product)}</span>
               </div>
-              <span>$35.50</span>
-            </div>
-            <div className="voucher-product">
-              <div>
-                <span className="cant">1x</span>
-                <span className="product">Combined pizza (small)</span>
+              <div className="voucher-info">
+                <span className="product">Сost of delivery</span>
+                <span>{currentOrder.costDelivery}</span>
               </div>
-              <span>$30.99</span>
-            </div>
-            <div className="voucher-info  space-top">
-              <span className="product">Production cost</span>
-              <span>$66.49</span>
-            </div>
-            <div className="voucher-info">
-              <span className="product">Сost of delivery</span>
-              <span>$8.00</span>
-            </div>
-            <hr />
-            <div className="total">
-              <span>Total</span>
-              <span>$74.49</span>
-            </div>
+              <hr />
+              <div className="total">
+                <span>Total</span>
+                <span>${Number(getTotalOrder(currentOrder.product))+ getPrice(currentOrder.costDelivery)}</span>
+              </div>
+            </>
+          }
         </section>
         <Footer />
     </>

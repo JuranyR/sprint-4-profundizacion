@@ -11,6 +11,12 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        >img{
+            object-fit: cover;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+        }
         .camera{
             position: relative;
             border: 0;
@@ -45,6 +51,16 @@
                 border: none;
             }
         }
+        &.border-red{
+            border-bottom: 1px solid red;
+        }
+        &:not(.border-red){
+            margin-bottom: 16px;
+        }
+    }
+    .text-red{
+        color: red;
+        margin-bottom: 16px;
     }
     .save{
         display: flex;
