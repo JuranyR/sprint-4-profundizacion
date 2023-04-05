@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sprint-4-profundizacion/static/css/main.9a041482.css",
-    "main.js": "/sprint-4-profundizacion/static/js/main.8812d2d3.js",
+    "main.js": "/sprint-4-profundizacion/static/js/main.bb37512e.js",
     "static/media/hamburger.svg": "/sprint-4-profundizacion/static/media/hamburger.5caeaba6163a0169ec2913907d627497.svg",
     "static/media/ice-cream.png": "/sprint-4-profundizacion/static/media/ice-cream.022c8c508c164d44799b.png",
     "static/media/Promo-1.jpg": "/sprint-4-profundizacion/static/media/Promo-1.623f78702c4dc5c8feb1.jpg",
@@ -14,10 +14,10 @@
     "static/media/facebook.svg": "/sprint-4-profundizacion/static/media/facebook.e4d1358060c01a3e706738bb8983b000.svg",
     "static/media/mail.svg": "/sprint-4-profundizacion/static/media/mail.8f21d0774be0fab32a87c47f91c495f5.svg",
     "main.9a041482.css.map": "/sprint-4-profundizacion/static/css/main.9a041482.css.map",
-    "main.8812d2d3.js.map": "/sprint-4-profundizacion/static/js/main.8812d2d3.js.map"
+    "main.bb37512e.js.map": "/sprint-4-profundizacion/static/js/main.bb37512e.js.map"
   },
   "entrypoints": [
     "static/css/main.9a041482.css",
-    "static/js/main.8812d2d3.js"
+    "static/js/main.bb37512e.js"
   ]
 }
