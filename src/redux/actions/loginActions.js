@@ -183,16 +183,16 @@ export const updateProfileAsync = (userInfo) => {
             };
             
             const userCollection = await updateItemActionAsync("users",userData,userInfo.id);
-
             dispatch(
                 updateProfileSync({
-                    user: {...userCollection},
+                    user: {...userInfo},
                     error: {
                         status: false,
                         message: ""
                     }
                 })
             );
+            return userCollection
         } catch (err) {
             console.log(err);
             dispatch(

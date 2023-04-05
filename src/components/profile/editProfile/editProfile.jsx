@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import HeaderBack from '../../commons/header-back/HeaderBack';
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import camera from '../../../images/camera.png'
 import edit from '../../../images/edit.png'
 import TextField from '@mui/material/TextField';
@@ -9,9 +9,11 @@ import { useForm } from 'react-hook-form'
 import {validateEmail} from '../../../utils/general'
 import { fileUpload } from '../../../services/uploadFile'
 import {updateProfileAsync } from '../../../redux/actions/loginActions'
+import Swal from "sweetalert2";
 
 const EditProfile = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { userId } = useParams();
     const { user } = useSelector((store) => store.login);
     const [canEditItem, setCanEditItemInput]= useState('')
@@ -43,7 +45,19 @@ const EditProfile = () => {
         } else{
             data.photo= user.photo
         }
-        dispatch(updateProfileAsync({...data,id:userId}))
+        dispatch(updateProfileAsync({...data,...user,id:userId})).then((res)=>{
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Genial',
+                text: 'datos actualizados!',
+                confirmButtonText: 'ok',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    navigate(-1)
+                }
+            })
+        })
     }
 
     return (

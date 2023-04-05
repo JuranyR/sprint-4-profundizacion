@@ -32,7 +32,8 @@ export const loginReducer = (state = initialState, action ) =>{
                     administrator: action.payload.user.administrator,
                     phoneNumer: action.payload.user.phoneNumer,
                     photo: action.payload.user.photo,
-                    cellphone: action.payload.user.cellphone
+                    cellphone: action.payload.user.cellphone,
+                    cards:action.payload.user.cards,
                 },
                 error: {
                     status: action.payload.error.status,
