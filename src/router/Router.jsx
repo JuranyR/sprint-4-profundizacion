@@ -43,7 +43,7 @@ const Router = () => {
         <BrowserRouter>
             <Routes>
                 <Route element={<PrivateRoute isLogged={isLogged} />}>
-                    <Route path="/" element={<Home />} />
+                    <Route path="*" element={<Home />} />
                     <Route path="restaurant/:restaurantId" element={<Restaurant />} />
                     <Route path="plate/:restaurantId/:plateId" element={<Plate />} />
                     <Route path="address" element={<Address />} />
@@ -63,29 +63,6 @@ const Router = () => {
                 <Route path="insertcode" element={<InsertCode />} />
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
-                {/*<Route element={<PrivateRoute />}>
-                     <Route path="/" element={<Home />} />
-                    <Route path="restaurant/:restaurantId" element={<Restaurant />} />
-                    <Route path="plate/:plateId" element={<Plate />} />
-                    <Route path="address" element={<Address />} />
-                    <Route path="search" element={<Search />} />
-                    <Route path="newOrder" element={<NewOrder />} />
-                    <Route path="currentOrder" element={<CurrentOrder />} />
-                    <Route path="orderAccepted" element={<OrderAccepted />} />
-                    <Route path="orders" element={<Orders />} />
-                    <Route path="orders/:orderId" element={<Order />} />
-                    <Route path="profile" element={<Profile />} />
-                    <Route path="editProfile" element={<EditProfile />} />
-                    <Route path="paymentMethod" element={<PaymentMethod />} />
-    <Route path="addNewCard" element={<NewCard />} /> 
-
-                </Route>
-                <Route element={<PublicRouter />}>
-                    <Route path="loginPhone" element={<LoginWithPhone />} />
-                    <Route path="insertcode" element={<InsertCode />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="register" element={<Register />} />
-                </Route>*/}
             </Routes>
         </BrowserRouter>
     )
