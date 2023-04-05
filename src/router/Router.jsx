@@ -3,10 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from '../components/home/Home'
 import Login from '../components/login/loginEmail/Login'
 import PrivateRoute from "./PrivateRoute";
-// import PublicRouter from "./PublicRoute";
 import { useSelector } from "react-redux";
-// import { onAuthStateChanged } from "firebase/auth";
-// import { auth } from "../firebase/FirebaseConfig";
 import Register from "../components/register/Register";
 import LoginWithPhone from "../components/login/loginPhone/LoginWithPhone";
 import InsertCode from "../components/login/loginPhone/InsertCode";
@@ -26,18 +23,7 @@ import OrderAccepted from "../components/orders/orderAcepted/OrderAccepted";
 
 const Router = () => {
     const { isLogged } = useSelector((store) => store.login);
-    /* const [isLogin, setIsLogin] = useState(undefined);
-    
-    useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
-          if (user?.uid) {
-            setIsLogin(true);
-          } else {
-            setIsLogin(false);
-          }
-        });
-    }, [setIsLogin]);
-    */ 
+
 
     return (
         <BrowserRouter>

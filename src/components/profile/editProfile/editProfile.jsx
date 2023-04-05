@@ -45,7 +45,7 @@ const EditProfile = () => {
         } else{
             data.photo= user.photo
         }
-        dispatch(updateProfileAsync({...data,...user,id:userId})).then((res)=>{
+        dispatch(updateProfileAsync({...user,...data,id:userId})).then((res)=>{
             
             Swal.fire({
                 icon: 'success',
